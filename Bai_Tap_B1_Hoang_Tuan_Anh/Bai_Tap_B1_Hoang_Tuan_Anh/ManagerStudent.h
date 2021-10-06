@@ -9,6 +9,7 @@ public:
 	void addMoreStudent();
 	void showStudentMaxPlusTwoSubject();
 	void showStudentPlusSubjectBiggerThenTwenty();
+	void showStudent();
 private:
 	std::vector<Student> mListStudent;
 	

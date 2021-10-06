@@ -1,5 +1,5 @@
 #include "Student.h"
-Student::Student(string id, string name, string dob, int math, int physics, int chemical)
+Student::Student(string id, string name, string dob, int math, int physics, int chemical,int markI,int markII)
 {
 	this->id = id;
 	this->name = name;
@@ -7,13 +7,15 @@ Student::Student(string id, string name, string dob, int math, int physics, int 
 	this->maths = math;
 	this->physics = physics;
 	this->chemical = chemical;
+	this->markI = markI;
+	this->markII = markII;
 }
 
 string Student::toString()
 {
 	return "ID: " + this->id
 		+ "\nName: " + this->name +
-		"\n date of birth: " + this->dob;
+		"\ndate of birth: " + this->dob;
 }
 
 int Student::getMath()
@@ -49,6 +51,24 @@ int Student::getMaxPlusTwoSubj()
 		max2 = this->physics;
 	}
 	return max1+max2;
+}
+
+int Student::getMarkI()
+{
+	return this->markI;
+}
+
+int Student::getMarkII()
+{
+	return this->markII;
+}
+
+int Student::getAverage()
+{	
+	if ((this->markI + 2 * this->markII) / 3 >= 5) {
+		return 1;
+	}
+	return 0;
 }
 
 Student::Student()
